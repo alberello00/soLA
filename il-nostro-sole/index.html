@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il nostro sole</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Il nostro <em>sole</em></h1>
+    <div class="byline" id="byline">ispirato a Giorgia Lupi</div>
+  </header>
+
+  <div class="grid">
+    <figure id="fig">
+      <svg id="sun" viewBox="-500 -500 1000 1000" role="img" aria-label="Visualizzazione radiale della chat: ogni raggio è un giorno"></svg>
+      <div class="tip" id="tip" hidden></div>
+    </figure>
+
+    <aside>
+      <section class="source">
+        <span class="badge" id="badge">Dati di esempio</span>
+        <p class="note" id="srcnote">Questo sole è disegnato con una chat inventata. Carica l'export della vostra chat per vedere il vostro.</p>
+        <div class="controls">
+          <label class="btn primary" for="file">Carica la chat<input type="file" id="file" accept=".txt,.zip,text/plain,application/zip"></label>
+          <button class="btn" id="play" type="button">▶ Riproduci</button>
+        </div>
+        <p class="note">Il file viene letto solo dal tuo browser: non viene inviato da nessuna parte.</p>
+        <details>
+          <summary>Come esportare la chat</summary>
+          <ul>
+            <li><strong>iPhone</strong>: apri la chat, tocca il nome → Esporta chat → <strong>Senza media</strong>. Carica lo .zip ottenuto.</li>
+            <li><strong>Android</strong>: ⋮ → Altro → Esporta chat → <strong>Includi media</strong>, così ogni allegato ha un nome che ne indica il tipo. Se lo .zip è molto pesante, estrai e carica solo il file .txt.</li>
+            <li>Con Android "Senza media" foto, vocali e video diventano tutti "Media omessi" e il tipo non si distingue.</li>
+          </ul>
+        </details>
+        <p class="err" id="err" hidden></p>
+      </section>
+
+      <section>
+        <h2>Segnali</h2>
+        <div class="chips" id="chips"></div>
+      </section>
+
+      <section>
+        <h2>Disposizione</h2>
+        <div class="seg" role="group" aria-label="Disposizione dei raggi">
+          <button type="button" id="m-all" aria-pressed="true">Insieme</button>
+          <button type="button" id="m-split" aria-pressed="false">Uno fuori, uno dentro</button>
+        </div>
+        <div class="who" id="who"></div>
+      </section>
+
+      <section>
+        <h2>In numeri</h2>
+        <dl class="stats" id="stats"></dl>
+      </section>
+
+      <section>
+        <h2>Come si legge</h2>
+        <p class="howto">Ogni raggio è un giorno. Si parte dall'alto e si gira in senso orario. Più il raggio è lungo, più ci siamo scritti quel giorno. I colori dicono che tipo di segnale era.</p>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/example.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
